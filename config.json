@@ -18,7 +18,6 @@
 	   Note that the filters are applied in order.
 	*/
 	"Filter Rules": {
-	    ".*\\.json$": ["Sample2"],
 		".*": ["Markdown"]
 	}
 }

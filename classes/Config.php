@@ -73,7 +73,7 @@ class Config {
 	   Note that the filters are applied in order.
 	*/
 	"{$filterRules}": {
-		".*": ["Filter1", "Filter2"]
+		".*": ["Markdown"]
 	}
 }
 TEMPLATE
