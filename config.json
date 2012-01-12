@@ -1,0 +1,24 @@
+{
+	/* @description
+       This is the name of the website, and will generally appear as
+	   the title of each page. 
+	*/
+	"Website Name": "Default Website Name",
+	
+	/* @description
+	   This is the location of the content for the website.
+	*/
+	"Content Location": "content",
+	
+	/* @description
+	   This is the set of rules on how to apply filters. It is an
+	   array, for the key of each item is the Regular Expression 
+	   pattern used to find matching files, and the value is the 
+	   array of filters to apply to all files matching this pattern.
+	   Note that the filters are applied in order.
+	*/
+	"Filter Rules": {
+	    ".*\\.json$": ["Sample2"],
+		".*": ["Markdown"]
+	}
+}

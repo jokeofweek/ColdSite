@@ -1,0 +1,1 @@
+<?phprequire_once('lib/markdown.php');class Filter_Markdown implements Filter {	public function run($content){		return Markdown($content);	}}

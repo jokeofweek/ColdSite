@@ -1,0 +1,1 @@
+<?phpclass Filter_Sample2 implements Filter {	public function run($content){		return 'Test 2';	}}
