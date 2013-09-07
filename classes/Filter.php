@@ -1,5 +1,5 @@
 <?php
 
 interface Filter {
-	public function run($content);
+	public function apply($file);
 }

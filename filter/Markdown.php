@@ -1,1 +1,1 @@
-<?phprequire_once('lib/markdown.php');class Filter_Markdown implements Filter {	public function run($content){		return Markdown($content);	}}
+<?phprequire_once('lib/markdown.php');class Filter_Markdown implements Filter {	public function apply($file){		$file->setContent(Markdown($file->getContent()));		// Rename .md to .html		$file->setFileName(			substr($file->getFileName(), 0, strlen($file->getFileName()) - 3)			.'.html');	}}

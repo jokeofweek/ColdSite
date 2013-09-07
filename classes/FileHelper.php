@@ -18,7 +18,7 @@ class FileHelper {
 		closedir($handle);
 	}
 
-	public static function getFileNames($path, &$names ){
+	public static function getFiles($path, &$files ){
 	
 		$handle = opendir($path);
 		
@@ -27,9 +27,9 @@ class FileHelper {
 		while ($file = readdir($handle)){
 			if ($file != '.' && $file != '..'){
 				if (is_dir($path.'/'.$file)){
-					self::getFileNames($path.'/'.$file, $names);
+					self::getFiles($path.'/'.$file, $files);
 				} else {
-					array_push($names, $path.'/'.$file);
+					array_push($files, new File($path.'/'.$file, array(), file_get_contents($path.'/'.$file)));
 				}
 			}
 		}

@@ -18,6 +18,6 @@
 	   Note that the filters are applied in order.
 	*/
 	"Filter Rules": {
-		".*": ["Markdown"]
+		".*\\.md$": ["Markdown"]
 	}
 }

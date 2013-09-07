@@ -1,1 +1,1 @@
-<?phpclass Filter_Sample2 implements Filter {	public function run($content){		return 'Test 2';	}}
+<?phpclass Filter_Sample2 implements Filter {	public function apply($file){		$file->setContent('Test 2');	}}

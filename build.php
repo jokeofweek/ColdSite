@@ -85,12 +85,18 @@ if (!is_dir($outputLoc)) {
 FileHelper::copyStructure($inputLoc, $outputLoc);
 
 // Set up the page builder
-$builder = new Builder($config);
+$filterProcessor = new FilterProcesser($config);
 
 // Get the list of files
 $files = array();
-FileHelper::getFileNames($inputLoc, $files);
+FileHelper::getFiles($inputLoc, $files);
 
 foreach ($files as $file){
-	$builder->buildPage($file);
+	$filterProcessor->filter($file);
+}
+
+foreach ($files as $file){
+	// Save the content
+	$fileName = str_replace($config->get(Config::$CONTENT_LOCATION).'/', '', $file->getFilename());
+	file_put_contents($config->get(Config::$CONTENT_OUTPUT).'/'.$fileName, $file->getContent());
 }
