@@ -41,7 +41,7 @@ if (PHP_SAPI !== 'cli'){
 foreach ($argv as $arg) {
 	if ($arg == '--generate-config'){
 		Config::generateConfiguration();
-		print "The file config.template.json has been created containing the".
+		print "The file config.json has been created containing the".
 			  " default template for configuration.\n";
 		die();
 	}
@@ -49,7 +49,8 @@ foreach ($argv as $arg) {
 
 // Load the configuration settings
 if (!file_exists('config.json')){
-	print "A config.json file is required, specifying the configuration options!\n";
+	print "A config.json file is required, specifying the configuration options!\n".
+		"In order to do this, run with the --generate-config argument.\n";
 	die();
 }
 

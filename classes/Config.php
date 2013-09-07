@@ -50,7 +50,7 @@ class Config {
 		$filterRules = self::$FILTER_RULES;
 		$contentLocation = self::$CONTENT_LOCATION;
 	
-		$file = fopen('config.template.json', 'w') or die('Could not write to the file config.template.json!');
+		$file = fopen('config.json', 'w') or die('Could not write to the file config.json!');
 		
 		fwrite($file, <<<TEMPLATE
 {
@@ -73,7 +73,7 @@ class Config {
 	   Note that the filters are applied in order.
 	*/
 	"{$filterRules}": {
-		".*": ["Markdown"]
+		".*\\\\.md$": ["Markdown"]
 	}
 }
 TEMPLATE
